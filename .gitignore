@@ -57,3 +57,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Testing Directory
+test/
+
+# TMAlign
+TMalign*
