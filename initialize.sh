@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Select current version of virtualenv:
-VERSION=13.0.3
+VERSION=13.1.0
 # Name your first "bootstrap" environment:
 INITIAL_ENV=.
 # Set to whatever python interpreter you want for your first environment:
