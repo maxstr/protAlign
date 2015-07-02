@@ -45,7 +45,7 @@ def main(seqDirectory, nativePDB, destination):
     results = {}
     results['seq'] = seqDirectory
     dataDir = join(destination, 'data')
-    results['dataDir'] = dataDir
+    results['dataDir'] = abspath(dataDir)
     # First we handle all model-model comparisons
     # Generates a list of all model[0-9].pdb in seqDirectory
     models = [f for f in listdir(seqDirectory) if re.search("model[0-9]*.pdb", f) and isfile(join(seqDirectory, f))]
