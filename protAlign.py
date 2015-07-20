@@ -34,7 +34,8 @@ def rmsdExtract(tmOutput):
 def tmExtract(tmOutput):
     return re.findall("TM-score= ([0-9.]*)", tmOutput)
 
-def main(seqDirectory, nativePDB, destination):
+# Runs TM-Align on all models and native.
+def valueGen(seqDirectory, nativePDB, destination):
     # First make sure data directory exists and is writeable
     if not exists(join(destination, 'data')):
         try:
@@ -128,12 +129,10 @@ RMSD Min (model): %(minRMSDValue)f ( %(minRMSDModel)s )
 
     with open(abspath(join(destination, "report.txt")), 'w') as report:
         report.write(output % results)
-
-
-
+    return results
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2], sys.argv[3])
+    valueGen(sys.argv[1], sys.argv[2], sys.argv[3])
 
 
 
